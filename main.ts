@@ -1,12 +1,12 @@
-input.onButtonPressed(Button.A, function on_button_pressed_a() {
+input.onButtonPressed(Button.A, function () {
     music.stopAllSounds()
     music.play(music.stringPlayable("A F E F D G E F ", 120), music.PlaybackMode.LoopingInBackground)
 })
-input.onButtonPressed(Button.B, function on_button_pressed_b() {
+input.onButtonPressed(Button.B, function () {
     music.stopAllSounds()
-    music.play(music.stringPlayable("G B C5 F D B A C ", 120), music.PlaybackMode.LoopingInBackground)
+    music.play(music.stringPlayable("G B A G C5 B A B ", 120), music.PlaybackMode.LoopingInBackground)
 })
-basic.forever(function on_forever() {
+basic.forever(function () {
     if (input.isGesture(Gesture.TiltLeft)) {
         music.setTempo(80)
         basic.showNumber(music.tempo())
@@ -14,5 +14,4 @@ basic.forever(function on_forever() {
         music.setTempo(160)
         basic.showNumber(music.tempo())
     }
-    
 })
